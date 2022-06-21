@@ -12,6 +12,10 @@ To generate node_modules:
 To run the project in development mode:
 `npm run dev`
 
+Heroku Live API
+
+https://card-of-decks.herokuapp.com/
+
 Create a new Deck
 [POST]
 http://localhost:5000/deck
