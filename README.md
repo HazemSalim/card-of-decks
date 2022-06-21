@@ -4,7 +4,10 @@
 
 Node API with Express and MongoDB database for a deck of cards.
 
-## CD API
+Clone Project
+git clone
+
+CD API
 
 ## Run
 
