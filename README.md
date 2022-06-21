@@ -12,6 +12,9 @@ To generate node_modules:
 To run the project in development mode:
 `npm run dev`
 
+To run Test Cases
+`npx jest`
+
 Heroku Live API
 
 https://card-of-decks.herokuapp.com/

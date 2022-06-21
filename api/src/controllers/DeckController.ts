@@ -9,6 +9,12 @@ export default module.exports = {
   async create(request: Request, response: Response) {
     const { type, shuffled } = request.body;
 
+    if (!type || !shuffled) {
+      return response.status(400).json({
+        error: "Missing parameters for creating a deck",
+      });
+    }
+
     let cards: any;
     let remaining: number;
 
@@ -41,6 +47,9 @@ export default module.exports = {
   async open(request: Request, response: Response) {
     const { uuid } = request.params;
 
+    if (!uuid)
+      response.status(404).json({ error: "The Deck ID not found or invalid" });
+
     const deck: Deck = await DeckModel.findOne({ deckId: uuid });
 
     if (!deck)
@@ -51,6 +60,12 @@ export default module.exports = {
 
   async drawCards(request: Request, response: Response) {
     const { uuid, numberOfCards } = request.params;
+
+    if (!uuid || !numberOfCards) {
+      return response.status(400).json({
+        error: "Missing parameters for drawing Card",
+      });
+    }
 
     const numberOfCardsInt = Number.parseInt(numberOfCards);
 
